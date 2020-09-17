@@ -1,0 +1,30 @@
+﻿@{
+    // List<Account> accounts = ((List<Account>)ViewBag.Accounts); // forma A
+    List<Categoria> category = ((List<Categoria>)Model); // forma B
+}
+
+<h1 class="h-100 font-weight-light">Categorias</h1>
+<a href="/category/create" class="badge badge-success">Registrar Categoria</a>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (int i = 0; i < category.Count; i++)
+        {
+            Categoria item = category[i];
+            <tr>
+                <td>@item.Nombre</td>
+                <td>
+                    <a href="/Category/edit?id=@item.Id" class="badge badge-warning">Editar</a> |
+                    <a href="/Category/delete?id=@item.Id" class="badge badge-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 

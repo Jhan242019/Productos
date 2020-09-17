@@ -1,0 +1,21 @@
+﻿@{
+    var category = (Categoria)Model;
+}
+
+<h1>Registrar Producto</h1>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <form action="/category/create" method="post">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" required name="Nombre" value="@category.Nombre" />
+                @Html.ValidationMessage("Nombre")
+            </div>
+
+            <button class="btn btn-primary">Registrar</button>
+
+        </form>
+    </div>
+</div>
+
